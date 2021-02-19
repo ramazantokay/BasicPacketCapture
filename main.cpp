@@ -115,6 +115,32 @@ int main(int argc, char *argv[])
 
     PacketStats stats;
     
+    //@TODO: Will be implemented filtering feature
+
+    // printf(ANSI_COLOR_GREEN "\nFiltering packets...\n" ANSI_COLOR_RESET);
+    
+    // pcpp::IPFilter ip1("ip_address", pcpp::SRC);
+    // pcpp::IPFilter ip2("ip_address", pcpp::SRC_OR_DST);
+    // pcpp::IPFilter ip3("ip_address", pcpp::SRC);
+
+    // pcpp::PortFilter portfilter(443, pcpp::SRC_OR_DST);
+    // pcpp::ProtoFilter protocolFilter(pcpp::UDP);
+
+    // pcpp::NotFilter notfilter(&ip1);
+    // pcpp::NotFilter notfilter2(&ip2);
+
+
+    // pcpp::AndFilter andFilter;
+
+    // andFilter.addFilter(&notfilter);
+    // andFilter.addFilter(&notfilter2);
+    
+    // andFilter.addFilter(&portfilter);
+    // andFilter.addFilter(&protocolFilter);
+
+    // pcpp::NotFilter noFilter(&andFilter);
+
+    // device->setFilter(andFilter);
     printf(ANSI_COLOR_GREEN "\nStarting capture packets...\n" ANSI_COLOR_RESET);
 
     device->startCaptureBlockingMode(onPacketsArrive, &stats, 0);
