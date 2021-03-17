@@ -21,7 +21,7 @@ static bool onPacketsArrive(pcpp::RawPacket *packet, pcpp::PcapLiveDevice *dev, 
     printf(ANSI_COLOR_BLUE "========================= #%d# PACKET START =========================" ANSI_COLOR_RESET, counter);
     printf("\n");
     printf("\n");
-    (ipv4Layer->getSrcIPAddress() == dev->getIPv4Address()) ? printf(ANSI_COLOR_RED "OUTGOING PACKET" ANSI_COLOR_RESET) : printf(ANSI_COLOR_GREEN "INCOMING PACKET" ANSI_COLOR_RESET);
+    (ipv4Layer!=NULL && ipv4Layer->getSrcIPAddress() == dev->getIPv4Address()) ? printf(ANSI_COLOR_RED "OUTGOING PACKET" ANSI_COLOR_RESET) : printf(ANSI_COLOR_GREEN "INCOMING PACKET" ANSI_COLOR_RESET);
     printf("\n");
     cout << parsedPacket.toString() << endl;
     printf(ANSI_COLOR_BLUE "========================= #%d# PACKET END =========================" ANSI_COLOR_RESET, counter++);
